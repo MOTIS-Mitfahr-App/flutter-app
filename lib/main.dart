@@ -31,9 +31,9 @@ class AppWrapper extends StatefulWidget {
 }
 
 class _AppWrapperState extends State<AppWrapper> {
-  final ThemeData lightTheme = ThemeData.light()
+  final ThemeData lightTheme = ThemeData.light().copyWith(useMaterial3: true)
     ..addOwn(const OwnThemeFields(success: Colors.green, onSuccess: Colors.white));
-  final ThemeData darkTheme = ThemeData.dark()
+  final ThemeData darkTheme = ThemeData.dark().copyWith(useMaterial3: true)
     ..addOwn(const OwnThemeFields(success: Colors.green, onSuccess: Colors.white));
 
   @override
