@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/util/email_field.dart';
 import 'package:flutter_app/util/loading_button.dart';
+import 'package:flutter_app/welcome/pages/after_registration_page.dart';
+import 'package:flutter_app/welcome/pages/login_page.dart';
 import 'package:flutter_app/util/password_field.dart';
 import 'package:flutter_app/util/supabase.dart';
 import 'package:progress_state_button/progress_button.dart';
@@ -86,10 +88,7 @@ class _RegisterFormState extends State<RegisterForm> {
         });
 
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: const Text("Account created. Please check your email."),
-            duration: Duration(seconds: double.infinity.toInt()),
-          ));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AfterRegistrationPage()));
         }
       }
     } else {
