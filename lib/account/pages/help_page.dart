@@ -95,7 +95,9 @@ class _HelpPageState extends State<HelpPage> {
                 SubmitButton(
                   text: S.of(context).pageHelpContactUs,
                   onPressed: () => launchUrlString(
-                      'mailto:motismitfahrapp@gmail.com?subject=${S.of(context).pageHelpEmailSubject(SupabaseManager.getCurrentProfile()!.id!)}'),
+                    'mailto:motismitfahrapp@gmail.com?'
+                    'subject=${S.of(context).pageHelpEmailSubject(SupabaseManager.getCurrentProfile()!.id!)}',
+                  ),
                 ),
               ],
         ),
