@@ -150,16 +150,13 @@ class _SearchSuggestionPage extends State<SearchSuggestionPage> {
 
   //todo: get possible Rides from Algorithm
   Future<void> loadRides() async {
-    List<dynamic> data = await supabaseClient
-        .from('drives')
-        .select('''
+    List<dynamic> data = await supabaseClient.from('drives').select('''
           *,
           driver:driver_id (
             *,
             profile_features (*)
           )
-        ''').eq(
-            'start', _startController.text);
+        ''').eq('start', _startController.text);
     List<Drive> drives = data.map((drive) => Drive.fromJson(drive)).toList();
     List<Ride> rides = drives
         .map((drive) => Ride.previewFromDrive(
