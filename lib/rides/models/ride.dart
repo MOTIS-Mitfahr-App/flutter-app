@@ -153,7 +153,7 @@ class Ride extends Trip {
   }
 }
 
-enum RideStatus { preview, pending, approved, rejected, cancelledByDriver, cancelledByRider }
+enum RideStatus { preview, pending, approved, rejected, cancelledByDriver, cancelledByRider, withdrawn }
 
 extension RideStatusExtension on RideStatus {
   bool isCancelled() {
